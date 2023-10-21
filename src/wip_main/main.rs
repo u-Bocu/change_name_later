@@ -3,6 +3,7 @@
 use winapi::shared::windef::*;
 use winapi::um::winuser::*;
 
+use eframe::egui;
 use std::mem::zeroed;
 
 // Local module
@@ -26,6 +27,18 @@ fn main() -> Result<(), eframe::Error> {
         unsafe {
             PeekMessageA(&mut msg, hwnd, WM_RBUTTONDOWN, WM_RBUTTONDOWN, PM_REMOVE)
         };
+
+        let options = eframe::NativeOptions {
+            initial_window_size: Some(egui::vec2(320.0, 240.0)),
+            ..Default::default()
+        };
+
+        eframe::run_simple_native("My egui App", options, move |ctx, _frame| {
+            egui::CentralPanel::default().show(ctx, |ui| {
+                ui.heading("My egui Application");
+                ui.label(format!("Hello"));
+            });
+        })?;
     }
 
     Ok(())

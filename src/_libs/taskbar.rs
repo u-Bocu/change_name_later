@@ -38,7 +38,7 @@ unsafe extern "system" fn window_proc(
     }
 
     if (lParam as UINT) == WM_LBUTTONDOWN {
-        window::show();
+        let _ = window::show();
     } else if (lParam as UINT) == WM_RBUTTONDOWN {
         EXIT = true;
     }
