@@ -1,0 +1,28 @@
+[package]
+name = "hello_world_simple"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "pirate_parrot_service"
+path = "src/service/main.rs"
+
+[[bin]]
+name = "pirate_parrot_installer"
+path = "src/installer/main.rs"
+
+[[bin]]
+name = "pirate_parrot_debug"
+path = "src/wip_main/main.rs"
+
+[lib]
+name = "pirate_parrot_lib"
+path = "src/_libs/libs.rs"
+
+[dependencies]
+eframe = "0.23.0"
+env_logger = "0.10"
+windows-service = "0.6.0"
+enigo = "0.1.3"
+tray-item = "0.9.0"
+winapi={version = "0.3.9", features = ["winuser", "wincon", "shellapi"]}
