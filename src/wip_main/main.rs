@@ -28,7 +28,7 @@ fn main() -> Result<(), eframe::Error> {
             PeekMessageA(&mut msg, hwnd, WM_RBUTTONDOWN, WM_RBUTTONDOWN, PM_REMOVE)
         };
 
-        let options = eframe::NativeOptions {
+        /*let options = eframe::NativeOptions {
             initial_window_size: Some(egui::vec2(320.0, 240.0)),
             ..Default::default()
         };
@@ -38,7 +38,7 @@ fn main() -> Result<(), eframe::Error> {
                 ui.heading("My egui Application");
                 ui.label(format!("Hello"));
             });
-        })?;
+        })?;*/
     }
 
     Ok(())

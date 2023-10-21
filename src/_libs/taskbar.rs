@@ -85,7 +85,7 @@ pub unsafe fn create() -> HWND {
     let trayToolTipUTF16: Vec<u16> = trayToolTipOS.encode_wide().collect::<Vec<u16>>();
     trayToolTipInt[..trayToolTipUTF16.len()].copy_from_slice(&trayToolTipUTF16);
 
-    let iconAddress: String = "D:/Code/change_name_later/icon.ico".to_string();
+    let iconAddress: String = "D:/Code/pirate_parrot/icon.ico".to_string();
     let iconAddressOS: &OsStr = OsStr::new(&*iconAddress);
     let iconAddressUTF16: Vec<u16> = iconAddressOS.encode_wide().collect::<Vec<u16>>();
     let icon: LPCWSTR = iconAddressUTF16.as_ptr();
