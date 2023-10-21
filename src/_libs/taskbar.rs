@@ -39,9 +39,7 @@ unsafe extern "system" fn window_proc(
 
     if (lParam as UINT) == WM_LBUTTONDOWN {
         window::show();
-        println!("Right clic on icon");
     } else if (lParam as UINT) == WM_RBUTTONDOWN {
-        println!("Left clic on icon");
         EXIT = true;
     }
     return DefWindowProcA(hwnd, uMsg, wParam, lParam);
